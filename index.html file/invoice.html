@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Invoice Pembelian</title>
+  <script>
+    function tampilkanInvoice() {
+      const params = new URLSearchParams(window.location.search);
+
+      document.getElementById("nama").textContent = params.get("nama") || "-";
+      document.getElementById("produk").textContent = params.get("produk") || "-";
+      document.getElementById("jumlah").textContent = params.get("jumlah") || "1";
+      document.getElementById("pembayaran").textContent = params.get("pembayaran") || "-";
+
+      // Set harga per produk
+      let harga = 0;
+      if (params.get("produk") === "Celana Chino") harga = 200000;
+      else if (params.get("produk") === "Kaos Polo") harga = 150000;
+
+      const jumlah = parseInt(params.get("jumlah") || 1);
+      const total = harga * jumlah;
+
+      document.getElementById("total").textContent = "Rp " + total.toLocaleString("id-ID");
+    }
+  </script>
+</head>
+<body onload="tampilkanInvoice()">
+  <h2>Invoice Pembelian</h2>
+
+  <p><strong>Nama:</strong> <span id="nama">-</span></p>
+  <p><strong>Produk:</strong> <span id="produk">-</span></p>
+  <p><strong>Jumlah:</strong> <span id="jumlah">1</span></p>
+  <p><strong>Metode Pembayaran:</strong> <span id="pembayaran">-</span></p>
+  <p><strong>Total Bayar:</strong> <span id="total">Rp 0</span></p>
+
+  <hr>
+  <p>Terima kasih telah berbelanja di toko kami!</p>
+  <button onclick="history.back()">← Kembali</button>
+</body>
+</html>

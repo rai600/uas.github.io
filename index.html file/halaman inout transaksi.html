@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Transaksi</title>
+</head>
+<body>
+  <h2>Form Transaksi</h2>
+
+  <form action="invoice.html" method="get">
+    <label>Nama Lengkap:</label><br>
+    <input type="text" name="nama"><br><br>
+
+    <label>Alamat:</label><br>
+    <textarea name="alamat"></textarea><br><br>
+
+    <label>Produk:</label><br>
+    <select name="produk">
+      <option value="Celana Chino">Celana Chino</option>
+      <option value="Kaos Polo">Kaos Polo</option>
+    </select><br><br>
+
+    <label>Jumlah:</label><br>
+    <input type="number" name="jumlah" value="1"><br><br>
+
+    <label>Metode Pembayaran:</label><br>
+    <input type="radio" name="pembayaran" value="Transfer"> Transfer Bank<br>
+    <input type="radio" name="pembayaran" value="COD"> COD<br><br>
+
+    <button type="submit">Checkout</button>
+  </form>
+</body>
+</html>
